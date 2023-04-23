@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import {
+import { Jumbotron,
   Container,
   Col,
   Form,
@@ -93,6 +93,8 @@ const {data} = await saveBook({variables: {input: bookToSave}})
 
   return (
     <>
+          <Jumbotron fluid className='text-light bg-dark'>
+
       <div className='text-light bg-dark pt-5'>
         <Container>
           <h1>Search for Books!</h1>
@@ -117,7 +119,7 @@ const {data} = await saveBook({variables: {input: bookToSave}})
           </Form>
         </Container>
       </div>
-
+</Jumbotron>
       <Container>
         <h2 className='pt-5'>
           {searchedBooks.length
