@@ -1,11 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Jumbotron,
-  Container,
-  Card,
-  Button,
-  Row,
-  Col
-} from 'react-bootstrap';
+import { Jumbotron, Container, CardColumns, Card, Button } from 'react-bootstrap';
+
 
 import { getMe, deleteBook } from '../utils/API';
 import Auth from '../utils/auth';
@@ -85,11 +80,11 @@ const userData = data?.me || [];
 
   return (
     <>
-    <Jumbotron fluid className='text-light bg-dark'>
+    <Jumbotron  fluid className='text-light bg-dark'>
         <Container>
           <h1>Viewing saved books!</h1>
         </Container>
-      </Jumbotron>
+      </Jumbotron >
       <div fluid className='text-light bg-dark p-5'>
         <Container>
           <h1>Viewing saved books!</h1>
@@ -101,7 +96,7 @@ const userData = data?.me || [];
             ? `Viewing ${userData.savedBooks.length} saved ${userData.savedBooks.length === 1 ? 'book' : 'books'}:`
             : 'You have no saved books!'}
         </h2>
-        <Row>
+        <CardColumns>
           {userData.savedBooks.map((book) => {
             return (
               <Col md="4">
@@ -119,7 +114,7 @@ const userData = data?.me || [];
               </Col>
             );
           })}
-        </Row>
+        </CardColumns>
       </Container>
     </>
   );

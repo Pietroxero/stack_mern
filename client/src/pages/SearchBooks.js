@@ -1,12 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Jumbotron,
-  Container,
-  Col,
-  Form,
-  Button,
-  Card,
-  Row
-} from 'react-bootstrap';
+import { Jumbotron, Container, Col, Form, Button, Card, CardColumns } from 'react-bootstrap';
+
 
 import Auth from '../utils/auth';
 import { saveBook, searchGoogleBooks } from '../utils/API';
@@ -126,7 +120,7 @@ const {data} = await saveBook({variables: {input: bookToSave}})
             ? `Viewing ${searchedBooks.length} results:`
             : 'Search for a book to begin'}
         </h2>
-        <Row>
+        <CardColumns>
           {searchedBooks.map((book) => {
             return (
               <Col md="4">
@@ -153,7 +147,7 @@ const {data} = await saveBook({variables: {input: bookToSave}})
               </Col>
             );
           })}
-        </Row>
+        </CardColumns>
       </Container>
     </>
   );
