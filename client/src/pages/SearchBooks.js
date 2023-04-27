@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Jumbotron, Container, Col, Form, Button, Card, CardColumns } from 'react-bootstrap';
+import { Jumbotron, Container, Col, Form, Button, Card, CardColumns, Row } from 'react-bootstrap';
 
 
 import Auth from '../utils/auth';
@@ -87,7 +87,7 @@ const {data} = await saveBook({variables: {input: bookToSave}})
 
   return (
     <>
-          <Jumbotron fluid className='text-light bg-dark'>
+          <div fluid className='text-light bg-dark'>
 
       <div className='text-light bg-dark pt-5'>
         <Container>
@@ -113,14 +113,14 @@ const {data} = await saveBook({variables: {input: bookToSave}})
           </Form>
         </Container>
       </div>
-</Jumbotron>
+</div>
       <Container>
         <h2 className='pt-5'>
           {searchedBooks.length
             ? `Viewing ${searchedBooks.length} results:`
             : 'Search for a book to begin'}
         </h2>
-        <CardColumns>
+        <div>
           {searchedBooks.map((book) => {
             return (
               <Col md="4">
@@ -147,7 +147,7 @@ const {data} = await saveBook({variables: {input: bookToSave}})
               </Col>
             );
           })}
-        </CardColumns>
+        </div>
       </Container>
     </>
   );
