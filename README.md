@@ -1,5 +1,7 @@
 ## Deployment
-Heroku link: 
+Heroku link: https://git.heroku.com/mern-stack-1-2-3.git
+
+Github Repo: https://github.com/Pietroxero/stack_mern
 
 ## Description
 Taking a fully functioning Google Books API search engine built with a RESTful API, and refactor it to be a GraphQL API built with Apollo Server. The app was built using the MERN stack, with a React front end, MongoDB database, and Node.js/Express.js server and API. It's already set up to allow users to save book searches to the back end.
