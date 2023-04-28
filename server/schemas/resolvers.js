@@ -8,11 +8,11 @@ const resolvers = {
 
         //get a user by username
         me: async (parent, args, context) => {
-
+console.log(context.user)
             if(context.user) {
                 const userData = await User.findOne({})
                 .select('-__v -password')
-                .populate('books')
+                // .populate('books')
             
                 return userData;
             }

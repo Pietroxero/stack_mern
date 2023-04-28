@@ -10,13 +10,16 @@ module.exports = {
     // allows token to be sent via  req.query or headers
     signToken: function({ username, email, _id }) {
       const payload = { username, email, _id };
-  
-      return jwt.sign({ data: payload }, secret, { expiresIn: expiration });
+  // console.log(payload)
+      const signToken = jwt.sign({ data: payload }, secret, { expiresIn: expiration });
+      console.log(signToken)
+      return signToken;
     },
 
     authMiddleware: function({req}) {
 
       let token = req.body.token || req.query.token || req.headers.authorization;
+      // console.log(token)
       if(req.headers.authorization) {
         token = token
           .split(' ')
@@ -28,6 +31,7 @@ module.exports = {
   } 
   try {
     const { data } = jwt.verify(token, secret, {maxAge: expiration});
+    // console.log(data)
     req.user = data;
 } catch {
     console.log('Invalid token')
